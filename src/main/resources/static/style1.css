@@ -1,0 +1,146 @@
+*{
+	margin: 0;
+	padding: 0;
+	outline: none;
+	transition: all .33s;
+}
+body{
+	background-color: #f8f8f8;
+}
+main{
+	max-width: 600px;
+	margin: 0 auto;
+	text-align: center;
+}
+.post{
+	width: 100%;
+	margin: 30px 0px 10px -50px;
+	cursor: default;
+}
+.post h2{
+	background-color: white;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 25px;
+	font-weight: 300;
+}
+.post img{
+	width: 100%;
+	margin-bottom: -4px;
+	box-shadow: 0px 2px 15px #676767;
+}
+aside{
+	position: fixed;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 0px;
+	z-index: 1;
+	padding-top: 10px;
+	text-align: center;
+	border-left: 1px solid #e9e9e9;
+	background-color: white;
+}
+aside h2{
+	width: 100%;
+	font-size: 35px;
+	font-weight: 100;
+	border-bottom: 1px solid #e5e5e5;
+	margin-bottom: 10px;
+	padding: 20px 0;
+	color: #1e90ff;
+}
+aside input{
+	margin: 30px 0px;
+}
+aside #title{
+	width: 50%;
+	padding: 2px 5px;
+	margin-left: 3px;
+	font-size: 26px;
+	border: none;
+	border-bottom: 2px solid #1e90ff;
+	color: #6ab2f9;
+	margin-bottom: 50px;
+}
+aside #title::placeholder{
+	color: #6ab2f9;
+}
+aside #title:hover, #title:focus{
+	width: 90%;
+	border-bottom: 4px solid #1e90ff;
+}
+aside #img{
+	display: none;
+}
+aside label{
+	margin-top: 100px;
+	padding: 30px;
+	background-color: #f3f3f3;
+	border-radius: 10px;
+	color: #6ca8e3;
+	cursor: pointer;
+}
+aside label:hover{
+	background-color: #6ab2f9;
+	color: white;
+}
+aside #post, aside #cancel{
+	margin-top: 100px;
+	padding: 20px 40px;
+	width: 70%;
+	font-size: 23px;
+	box-shadow: 0px 4px 20px #bfbfbf;
+	border: none;
+	color: #6ca8e3;
+	transition: .3s;
+	cursor: pointer;
+}
+aside #post:hover{
+	color: white;
+	background-color: #6ab2f9;
+}
+aside #cancel{
+	color: #ff3636;
+	padding: 15px 40px;
+	margin-top: 25px;
+}
+aside #cancel:hover{
+	color: white;
+	background-color: #ff3636;
+}
+p#error{
+	color: white;
+	background-color: #ff4949;
+	font-weight: bold;
+	line-height: 20px;
+}
+button{
+	position: fixed;
+	bottom: 40px;
+	right: 45px;
+	font-size: 40px;
+	padding: 5px 17px;
+	border-radius: 50%;
+	box-shadow: 0 6px 10px 0 rgba(0,0,0,0.3);
+	border: none;
+	cursor: pointer;
+	color: white;
+	background-color: #1e90ff;
+}
+button:hover{
+	background-color: #56a2ea;
+}
+@media (max-width: 700px){
+	main{
+		width: 100%;
+		margin-top: -20px;
+	}
+	main .post{
+		margin: 30px auto;
+	}
+	button{
+		right: 10px;
+		bottom: 10px;
+	}
+}
