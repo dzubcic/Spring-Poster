@@ -7,10 +7,25 @@
 body{
 	background-color: #f8f8f8;
 }
+h1{
+	position: fixed;
+    margin-top: 250px;
+    margin-left: -140px;
+    transform: rotate(-90deg);
+    font-size: 100px;
+    font-weight: 100;
+    cursor: default;
+    color: rgba(128, 128, 128, 0.3);
+    z-index: -1;
+}
+h1 span {
+    color: #1e90ff;
+}
 main{
 	max-width: 600px;
 	margin: 0 auto;
 	text-align: center;
+	background-color: inherit;
 }
 .post{
 	width: 100%;
@@ -36,39 +51,39 @@ aside{
 	height: 100%;
 	width: 0px;
 	z-index: 1;
-	padding-top: 10px;
+	box-shadow: 0px -3px 6px #cccccc;
 	text-align: center;
-	border-left: 1px solid #e9e9e9;
-	background-color: white;
+	background-color: #f5f5f5;
 }
 aside h2{
 	width: 100%;
 	font-size: 35px;
 	font-weight: 100;
-	border-bottom: 1px solid #e5e5e5;
-	margin-bottom: 10px;
-	padding: 20px 0;
+	padding: 25px 0;
 	color: #1e90ff;
+	background-color: #f9f9f9;
 }
 aside input{
 	margin: 30px 0px;
+	border-radius: 6px;
+	background-color: inherit;
 }
 aside #title{
-	width: 50%;
-	padding: 2px 5px;
-	margin-left: 3px;
+	width: 35%;
+	padding: 5px;
 	font-size: 26px;
 	border: none;
 	border-bottom: 2px solid #1e90ff;
 	color: #6ab2f9;
-	margin-bottom: 50px;
+	margin-bottom: 70px;
+	background-color: inherit;
+	border-radius: 0;
 }
 aside #title::placeholder{
 	color: #6ab2f9;
 }
 aside #title:hover, #title:focus{
 	width: 90%;
-	border-bottom: 4px solid #1e90ff;
 }
 aside #img{
 	display: none;
@@ -77,15 +92,15 @@ aside label{
 	margin-top: 100px;
 	padding: 30px;
 	background-color: #f3f3f3;
-	border-radius: 10px;
+	box-shadow: 0px 1px 5px #d6d6d6;
+	border-radius: 8px;
 	color: #6ca8e3;
 	cursor: pointer;
 }
 aside label:hover{
-	background-color: #6ab2f9;
-	color: white;
+	box-shadow: 0px 3px 10px #d6d6d6;
 }
-aside #post, aside #cancel{
+aside #post{
 	margin-top: 100px;
 	padding: 20px 40px;
 	width: 70%;
@@ -101,9 +116,13 @@ aside #post:hover{
 	background-color: #6ab2f9;
 }
 aside #cancel{
-	color: #ff3636;
+	width: 70%;
+	border: none;
+	font-size: 23px;
+	color: red;
 	padding: 15px 40px;
 	margin-top: 25px;
+	cursor: pointer;
 }
 aside #cancel:hover{
 	color: white;

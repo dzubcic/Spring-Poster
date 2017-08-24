@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartException;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.util.HtmlUtils;
 
 import com.springposter.entity.Post;
 import com.springposter.service.PostService;
@@ -54,7 +55,7 @@ public class HomeController {
 		
 		Post[] p = new Post[1];
 		p[0] = new Post();
-		p[0].setTitle(title);
+		p[0].setTitle(HtmlUtils.htmlEscape(title));
 		p[0].setImageName(imgName);
 		
 		postService.add(p[0]);

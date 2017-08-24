@@ -16,9 +16,6 @@ function reset(){
 
 document.querySelector("button").onclick =  function(){
 	aside.style.width = "300px";
-	/*
-    
-	 */
 }
 
 image.onchange = function(){

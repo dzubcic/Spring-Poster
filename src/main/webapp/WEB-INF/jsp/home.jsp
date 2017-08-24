@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="style1.css"/>
 	</head>
 	<body>
+		<h1>Spring<span>Poster<span></span></span></h1>
 		<main>
 			<c:forEach items="${posts}" var = "post">
 				<div class="post">
