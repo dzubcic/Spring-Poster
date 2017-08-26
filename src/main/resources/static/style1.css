@@ -89,31 +89,31 @@ aside #img{
 	display: none;
 }
 aside label{
-	margin-top: 100px;
+	position: relative;
 	padding: 30px;
-	background-color: #f3f3f3;
 	box-shadow: 0px 1px 5px #d6d6d6;
 	border-radius: 8px;
 	color: #6ca8e3;
 	cursor: pointer;
 }
 aside label:hover{
-	box-shadow: 0px 3px 10px #d6d6d6;
+	top: -2px;
+	box-shadow: 0px 3px 12px #d4d4d4;
 }
 aside #post{
+	background-color: #efefef;
 	margin-top: 100px;
 	padding: 20px 40px;
 	width: 70%;
 	font-size: 23px;
-	box-shadow: 0px 4px 20px #bfbfbf;
 	border: none;
 	color: #6ca8e3;
 	transition: .3s;
 	cursor: pointer;
 }
 aside #post:hover{
-	color: white;
-	background-color: #6ab2f9;
+	box-shadow: 0px 3px 7px #d4d4d4;
+	background-color: white;
 }
 aside #cancel{
 	width: 70%;
@@ -125,8 +125,8 @@ aside #cancel{
 	cursor: pointer;
 }
 aside #cancel:hover{
-	color: white;
-	background-color: #ff3636;
+	box-shadow: 0px 3px 7px #d4d4d4;
+	background-color: white;
 }
 p#error{
 	color: white;
@@ -139,18 +139,23 @@ button{
 	bottom: 40px;
 	right: 45px;
 	font-size: 40px;
-	padding: 5px 17px;
+	font-family: serif;
+	width: 60px;
+	height: 60px;
 	border-radius: 50%;
-	box-shadow: 0 6px 10px 0 rgba(0,0,0,0.3);
+	box-shadow: 0 0 15px #a7a7a7;
 	border: none;
 	cursor: pointer;
 	color: white;
 	background-color: #1e90ff;
 }
 button:hover{
-	background-color: #56a2ea;
+	transform: rotate(180deg);
 }
-@media (max-width: 700px){
+@media (max-width: 1100px){
+	h1{
+		display: none;
+	}
 	main{
 		width: 100%;
 		margin-top: -20px;
@@ -159,7 +164,7 @@ button:hover{
 		margin: 30px auto;
 	}
 	button{
-		right: 10px;
-		bottom: 10px;
+		right: 15px;
+		bottom: 15px;
 	}
 }
