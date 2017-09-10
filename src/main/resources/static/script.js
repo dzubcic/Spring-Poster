@@ -32,10 +32,8 @@ document.querySelector("aside #cancel").onclick = function(){
 	reset();
 }
 
-window.onscroll = function() {
-	if(window.scrollY + window.innerHeight == document.body.scrollHeight
-			|| window.scrollY + window.innerHeight - 40 == document.body.scrollHeight){
-		document.body.scrollHeight += 1000;
+window.onscroll = setInterval( function() {
+	if(window.scrollY + window.innerHeight >= document.body.scrollHeight - 200){
 		 var xhr = new XMLHttpRequest();
 			xhr.onreadystatechange = function(){
 				if (this.readyState == 4 && this.status == 200){
@@ -44,14 +42,13 @@ window.onscroll = function() {
 						window.onscroll = null;
 					}
 					main.innerHTML += resp;
-					document.body.scrollHeight -= 1000;
 				}
 			}
 			xhr.open("GET", "/more=" + (count++) * 3, true);
 			xhr.send();
 	 }
 	        
-};
+}, 200);
 
 
 document.querySelector("aside #post").onclick = function(e){
