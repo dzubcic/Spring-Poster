@@ -20,7 +20,7 @@ import com.springposter.repository.PostRepository;
 
 @Service
 public class PostService {
-	
+
 	@Autowired
 	private PostRepository postRepository;
 
@@ -34,31 +34,28 @@ public class PostService {
 
 	public void clear() {
 		File file = new File("images/");
-		for(File f : file.listFiles())
+		for (File f : file.listFiles())
 			f.delete();
 		postRepository.deleteAllInBatch();
 	}
 
-	public String checkName(String name){
-		String imgName = name;
-		if(postRepository.findByimageName(imgName) != null){
-			String old = name.substring(0, name.indexOf("."));
-			imgName = name.replace(old, old + new Random().nextInt(1000));
+	public String checkName(String imgName) {
+		if (postRepository.findByimageName(imgName) != null) {
+			String old = imgName.substring(0, imgName.indexOf("."));
+			imgName = imgName.replace(old, old + new Random().nextInt(1000));
 		}
 		return imgName;
 	}
-	
-	public void removeOne(long id){
-		
-		try{
-			
+
+	public void removeOne(long id) {
+		try {
 			Post p = postRepository.findOne(id);
 			File file = new File("images/" + p.getImageName());
 			file.delete();
 			postRepository.delete(p);
-			
+
+		} catch (NullPointerException e) {
 		}
-		catch (NullPointerException e) {}
 	}
 
 	public void resizeAndSave(MultipartFile img, String name) throws IOException {
@@ -66,8 +63,8 @@ public class PostService {
 		upl.createNewFile();
 		FileOutputStream fout = new FileOutputStream(upl);
 		BufferedImage original = ImageIO.read(img.getInputStream());
-		
-		if(original.getWidth() > 600 && !img.getContentType().contains("gif")){
+
+		if (original.getWidth() > 600 && !img.getContentType().contains("gif")) {
 			Image org = original.getScaledInstance(600, -1, Image.SCALE_SMOOTH);
 			BufferedImage newImg = new BufferedImage(600, org.getHeight(null), original.getType());
 			Graphics2D g = newImg.createGraphics();
@@ -75,12 +72,11 @@ public class PostService {
 			g.dispose();
 			ImageIO.write(newImg, img.getContentType().replace("image/", ""), upl);
 		}
-		
-		else 
+
+		else
 			fout.write(img.getBytes());
-		
+
 		fout.close();
 	}
-
 
 }
